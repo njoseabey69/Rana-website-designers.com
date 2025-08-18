@@ -209,7 +209,7 @@
     </header>
     <!-- Hero Section -->
     <section
-      id="home"
+     id="home"
       class="pt-24 hero-bg relative"
       style="background-image: url('https://readdy.ai/api/search-image?query=modern%20minimalist%20workspace%20with%20computer%2C%20design%20elements%2C%20creative%20atmosphere%2C%20soft%20lighting%2C%20professional%20environment%2C%20clean%20desk%20setup%2C%20web%20design%20elements%2C%20digital%20art%20tools%2C%20neutral%20color%20palette%2C%20inspirational%20workspace&width=1920&height=1080&seq=1&orientation=landscape')"
     >
@@ -325,7 +325,8 @@
               <p class="text-gray-600 text-sm mb-3">Web Design and maintainance, Development</p>
               <a
                 href="#"
-                class="text-primary font-medium inline-flex items-center"
+                class="text-primary font-medium inline-flex items-center view-project-btn"
+                data-project="Luxe Fashion E-commerce"
               >
                 View Project <i class="ri-arrow-right-line ml-1"></i>
               </a>
@@ -550,6 +551,174 @@
           </a>
         </div>
       </div>
+    </section>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-white p-6 border-b flex justify-between items-center">
+          <h3 id="project-modal-title" class="text-2xl font-bold text-gray-900">Project Details</h3>
+          <button id="close-project-modal" class="text-gray-500 hover:text-gray-700">
+            <i class="ri-close-line text-2xl"></i>
+          </button>
+        </div>
+        <div id="project-modal-content" class="p-6">
+          <!-- Content will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Details Modal -->
+    <div id="service-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-white p-6 border-b flex justify-between items-center">
+          <h3 id="service-modal-title" class="text-2xl font-bold text-gray-900">Service Details</h3>
+          <button id="close-service-modal" class="text-gray-500 hover:text-gray-700">
+            <i class="ri-close-line text-2xl"></i>
+          </button>
+        </div>
+        <div id="service-modal-content" class="p-6">
+          <!-- Content will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Hire Modal Section -->
+    <div id="hire-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-white p-6 border-b flex justify-between items-center">
+          <h3 class="text-2xl font-bold text-gray-900">Hire Me</h3>
+          <button id="close-hire-modal" class="text-gray-500 hover:text-gray-700">
+            <i class="ri-close-line text-2xl"></i>
+          </button>
+        </div>
+        
+        <div class="p-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h4 class="text-xl font-semibold mb-4 text-gray-900">Quick Start Templates</h4>
+              <p class="text-gray-600 mb-4">Click any template below to auto-populate your project details:</p>
+              <div class="space-y-3">
+                <button onclick="populateRecommendations('webDesign')" class="w-full text-left p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
+                  <div class="font-medium text-gray-900">🎨 Business Website Redesign</div>
+                  <div class="text-sm text-gray-600">Perfect for business owners needing a fresh, modern website</div>
+                </button>
+                <button onclick="populateRecommendations('webDevelopment')" class="w-full text-left p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors">
+                  <div class="font-medium text-gray-900">💻 Web Application Development</div>
+                  <div class="text-sm text-gray-600">For startups and businesses needing custom web apps</div>
+                </button>
+                <button onclick="populateRecommendations('uiuxDesign')" class="w-full text-left p-3 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors">
+                  <div class="font-medium text-gray-900">📱 Mobile App UI/UX Design</div>
+                  <div class="text-sm text-gray-600">Complete UI/UX design for mobile applications</div>
+                </button>
+                <button onclick="populateRecommendations('computerSolutions')" class="w-full text-left p-3 bg-orange-50 hover:bg-orange-100 rounded-lg transition-colors">
+                  <div class="font-medium text-gray-900">🔧 IT & Computer Solutions</div>
+                  <div class="text-sm text-gray-600">Comprehensive IT setup and support services</div>
+                </button>
+              </div>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-semibold mb-4 text-gray-900">Contact Me Directly</h4>
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+                    <i class="ri-mail-line text-primary"></i>
+                  </div>
+                  <div>
+                    <a href="mailto:ranawebsitedesigner@gmail.com" class="text-primary hover:underline">ranawebsitedesigner@gmail.com</a>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justifyCenter mr-3">
+                    <i class="ri-phone-line text-primary"></i>
+                  </div>
+                  <div>
+                    <a href="tel:+256759390003" class="text-gray-900 hover:underline">+256 759 390 003</a>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+                    <i class="ri-whatsapp-line text-primary"></i>
+                  </div>
+                  <div>
+                    <a href="https://wa.me/256780444789" class="text-gray-900 hover:underline" target="_blank">WhatsApp: +256 780 444 789</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-6">
+                <h4 class="text-lg font-semibold mb-3 text-gray-900">Availability</h4>
+                <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <p class="text-gray-600">Saturday: 10:00 AM - 3:00 PM</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project Inquiry Form -->
+          <div class="border-t pt-6">
+            <h4 class="text-xl font-semibold mb-4 text-gray-900">Project Inquiry Form</h4>
+            <form id="modal-hire-form" class="space-y-4">
+              <div>
+                <input 
+                  type="text" 
+                  placeholder="Your Full Name" 
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  required
+                >
+              </div>
+              <div>
+                <input 
+                  type="email" 
+                  placeholder="Email Address" 
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  required
+                >
+              </div>
+              <div>
+                <select 
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  required
+                >
+                  <option value="">Select Service Needed</option>
+                  <option>Web Design</option>
+                  <option>Web Development</option>
+                  <option>UI/UX Design</option>
+                  <option>Computer Solutions</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <textarea 
+                  rows="4" 
+                  placeholder="Tell me about your project (goals, requirements, timeline...)" 
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  required
+                ></textarea>
+              </div>
+              <div class="flex items-start">
+                <input
+                  type="checkbox"
+                  id="hire-agreement"
+                  name="agreement"
+                  required
+                  class="mt-1 mr-3 rounded border-gray-300 text-primary focus:ring-primary"
+                >
+                <label for="hire-agreement" class="text-gray-600 text-sm">
+                  I agree to the <a href="#" class="text-primary hover:underline">Terms</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a>
+                </label>
+              </div>
+              <button 
+                type="submit" 
+                class="w-full bg-primary text-white py-3 px-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+              >
+                Send Project Request
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     </section>
     <!-- Services Section -->
     <section id="services" class="py-20 bg-white">
@@ -1342,6 +1511,241 @@
         }
         window.addEventListener("scroll", highlightNavLink);
         highlightNavLink(); // Run once on page load
+      });
+    </script>
+
+    <script>
+      // Hire Me Recommendations System
+      document.addEventListener('DOMContentLoaded', function() {
+        const hireModal = document.getElementById('hire-modal');
+        const hireForm = document.getElementById('modal-hire-form');
+        const closeModalBtn = document.getElementById('close-hire-modal');
+        
+        // Recommended project templates
+        const recommendations = {
+          webDesign: {
+            name: "Business Owner",
+            email: "business@example.com",
+            service: "Web Design",
+            message: `Hello RANA,
+
+I'm looking to redesign my business website to create a more modern and professional online presence. Here are my requirements:
+
+PROJECT OVERVIEW:
+- Type: Business website redesign
+- Pages needed: Home, About, Services, Portfolio, Contact
+- Style: Clean, modern, professional
+- Target audience: Local businesses and customers
+
+KEY FEATUREURES NEEDED:
+- Responsive design for all devices
+- Fast loading speed
+- SEO optimization
+- Contact forms
+- Social media integration
+- Easy content management
+
+BUDGET: $500 - $800
+TIMELINE: 2-3 weeks
+
+I'm particularly interested in your portfolio items and would love to discuss how we can make my website stand out.
+
+Best regards,
+[Your Name]`
+          },
+          
+          webDevelopment: {
+            name: "Startup Founder",
+            email: "startup@example.com",
+            service: "Web Development",
+            message: `Hello RANA,
+
+I'm building a web application for my startup and need a reliable developer to bring my vision to life.
+
+PROJECT DETAILS:
+- Type: Web application development
+- Features: User authentication, dashboard, data management
+- Technology: Modern stack (React/Node.js preferred)
+- Database: Integration needed
+- API: Third-party integrations required
+
+FUNCTIONAL REQUIREMENTS:
+- User registration/login system
+- Admin dashboard
+- Data visualization
+- Payment processing
+- Mobile responsive
+- Performance optimization
+
+BUDGET: $800 - $1500
+TIMELINE: 4-6 weeks
+
+I have some wireframes ready and would appreciate your expertise in refining the technical approach.
+
+Looking forward to discussing this project.
+
+Best regards,
+[Your Name]`
+          },
+          
+          uiuxDesign: {
+            name: "Product Manager",
+            email: "pm@example.com",
+            service: "UI/UX Design",
+            message: `Hello RANA,
+
+I need a UI/UX designer to help create an intuitive interface for our new product.
+
+PROJECT SCOPE:
+- Type: Mobile app UI/UX design
+- Platform: iOS and Android
+- Screens: 15-20 screens total
+- Style: Modern, user-friendly, accessible
+
+DELIVERABLES NEEDED:
+- User research and personas
+- Wireframes and prototypes
+- High-fidelity mockups
+- Design system/components
+- User testing recommendations
+- Handoff documentation
+
+TARGET USERS:
+- Age: 25-45
+- Tech-savvy professionals
+- Primary use: productivity/organization
+
+BUDGET: $600 - $1000
+TIMELINE: 3-4 weeks
+
+I have user stories and basic requirements documented. Would love to see your design process.
+
+Best regards,
+[Your Name]`
+          },
+          
+          computerSolutions: {
+            name: "Office Manager",
+            email: "office@example.com",
+            service: "Computer Solutions",
+            message: `Hello RANA,
+
+We need comprehensive IT solutions for our growing office.
+
+SERVICES NEEDED:
+- Network setup and security
+- Computer maintenance and support
+- Software installation and training
+- Data backup solutions
+- Cloud services setup
+- Remote support capabilities
+
+CURRENT SETUP:
+- 10-15 computers
+- Mixed Windows/Mac environment
+- Need better security protocols
+- Require regular maintenance
+
+ONGOING SUPPORT:
+- Monthly maintenance visits
+- Remote support as needed
+- Emergency support availability
+- Staff training sessions
+
+BUDGET: $400 - $800 setup + monthly support
+TIMELINE: 1-2 weeks setup, ongoing support
+
+Please provide a detailed quote for both setup and ongoing support.
+
+Best regards,
+[Your Name]`
+          }
+        };
+        
+        // Function to populate form with recommendations
+        function populateRecommendations(type) {
+          const form = document.getElementById('modal-hire-form');
+          if (!form) return;
+          
+          const rec = recommendations[type] || recommendations.webDesign;
+          
+          // Populate form fields
+          const nameInput = form.querySelector('input[type="text"]');
+          const emailInput = form.querySelector('input[type="email"]');
+          const serviceSelect = form.querySelector('select');
+          const messageTextarea = form.querySelector('textarea');
+          
+          if (nameInput) nameInput.placeholder = rec.name;
+          if (emailInput) emailInput.placeholder = rec.email;
+          if (serviceSelect) serviceSelect.value = rec.service;
+          if (messageTextarea) messageTextarea.placeholder = rec.message;
+          
+          // Add visual feedback
+          const inputs = form.querySelectorAll('input, select, textarea');
+          inputs.forEach(input => {
+            input.classList.add('border-primary', 'bg-blue-50/30');
+            setTimeout(() => {
+              input.classList.remove('border-primary', 'bg-blue-50/30');
+            }, 2000);
+          });
+        }
+        
+        // Make populateRecommendations globally available
+        window.populateRecommendations = populateRecommendations;
+        
+        // Function to open modal
+        function openHireModal(type = 'webDesign') {
+          hireModal.classList.remove('hidden');
+          populateRecommendations(type);
+        }
+        
+        // Function to close modal
+        function closeHireModal() {
+          hireModal.classList.add('hidden');
+        }
+        
+        // Event listeners for all Hire Me buttons
+        document.querySelectorAll('a[href="#contact"]').forEach(button => {
+          button.addEventListener('click', function(e) {
+            e.preventDefault();
+            openHireModal('webDesign'); // Default to web design
+          });
+        });
+        
+        // Enhanced click handlers with service detection
+        document.addEventListener('click', function(e) {
+          if (e.target.matches('a[href="#contact"]') || e.target.closest('a[href="#contact"]')) {
+            e.preventDefault();
+            
+            // Determine service type based on context
+            let serviceType = 'webDesign';
+            
+            // Check if we're in services section
+            if (e.target.closest('#services')) {
+              const serviceCard = e.target.closest('.bg-white.rounded-lg');
+              if (serviceCard) {
+                const serviceTitle = serviceCard.querySelector('h3')?.textContent?.toLowerCase();
+                if (serviceTitle?.includes('ui/ux')) serviceType = 'uiuxDesign';
+                else if (serviceTitle?.includes('development')) serviceType = 'webDevelopment';
+              }
+            }
+            
+            openHireModal(serviceType);
+          }
+        });
+        
+        // Close modal events
+        closeModalBtn.addEventListener('click', closeHireModal);
+        hireModal.addEventListener('click', function(e) {
+          if (e.target === hireModal) closeHireModal();
+        });
+        
+        // Auto-populate based on URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const service = urlParams.get('service');
+        if (service && recommendations[service]) {
+          openHireModal(service);
+        }
       });
     </script>
   </body>
